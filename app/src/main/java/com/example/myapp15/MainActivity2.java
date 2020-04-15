@@ -39,9 +39,23 @@ public class MainActivity2 extends  AppCompatActivity {
         String letras = primerosCuatroCaracteresRFC(nombre, apPat, apMat);
         String zodiaco = getSigno(mes, dia);
         String chino = getAnimal(anio);
-        String rfc = letras+numeros+m+d;
-
-        tvDatosRFC.setText(rfc);
+        if(dia>=10){
+            if(mes>=10) {
+                String rfc = letras + numeros + m + d;
+                tvDatosRFC.setText(rfc);
+            }else{
+                String rfc = letras + numeros + "0" + m + d;
+                tvDatosRFC.setText(rfc);
+            }
+        }else{
+            if(mes>=10) {
+                String rfc = letras + numeros + m + "0" + d;
+                tvDatosRFC.setText(rfc);
+            }else{
+                String rfc = letras + numeros + "0" + m + "0" + d;
+                tvDatosRFC.setText(rfc);
+            }
+        }
         tvDatosZodiaco.setText(zodiaco);
         tvDatosChino.setText(chino);
 
