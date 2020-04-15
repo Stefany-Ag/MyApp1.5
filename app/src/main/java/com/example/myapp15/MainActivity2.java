@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.Normalizer;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity2 extends  AppCompatActivity {
@@ -37,7 +39,7 @@ public class MainActivity2 extends  AppCompatActivity {
         String letras = primerosCuatroCaracteresRFC(nombre, apPat, apMat);
         String zodiaco = getSigno(mes, dia);
         String chino = getAnimal(anio);
-        String rfc = letras+d+m+numeros;
+        String rfc = letras+numeros+m+d;
 
         tvDatosRFC.setText(rfc);
         tvDatosZodiaco.setText(zodiaco);
